@@ -1,0 +1,47 @@
+#saved-movies
+{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  font-size: 22px;
+}
+
+ul
+{
+  padding: 0px;
+}
+
+ul li
+{
+  padding: 0px;
+  list-style: none;
+  min-width: 600px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+span
+{
+  font-size: 22px;
+  font-weight: bold;
+}
+
+button
+{
+  border-style: none;
+  margin-left: 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color:brown;
+  color:white;
+  font-size: 20px;
+}
+
+ul li div a
+{
+  color:brown;
+}
