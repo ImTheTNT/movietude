@@ -12,24 +12,25 @@ function Movie ()
   const [movies, setMovies] = useState ([])
   const [loading, setLoading] = useState (true)
 
+  async function loadMovie ()
+  {
+    const response = await api.get (`${id}`)
+    setMovies (JSON.parse (localStorage.getItem ('movies')))
+
+    if (response.data.length !== 0)
+    {
+      setMovie (response.data)
+      setLoading (false)
+    }
+    else
+    {
+      history.replace ('/')
+      return
+    }
+  }
+
   useEffect (() =>
   {
-    async function loadMovie ()
-    {
-      const response = await api.get (`${id}`)
-      setMovies (JSON.parse (localStorage.getItem ('movies')))
-
-      if (response.data.length !== 0)
-      {
-        setMovie (response.data)
-        setLoading (false)
-      }
-      else
-      {
-        history.replace ('/')
-        return
-      }
-    }
     loadMovie ()
   }, [id, history, movies])
 

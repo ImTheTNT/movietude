@@ -12,7 +12,6 @@ function Home ()
     {
       const response = await api.get ()
       setMovies (response.data)
-      console.log (response.data)
     }
     loadMovies ()
   }, [])
