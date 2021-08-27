@@ -15,7 +15,7 @@ function Movie ()
   async function loadMovie ()
   {
     const response = await api.get (`${id}`)
-    setMovies (JSON.parse (localStorage.getItem ('movies')))
+    setMovies (JSON.parse (localStorage.getItem ('movies')) || [])
 
     if (response.data.length !== 0)
     {
@@ -68,7 +68,7 @@ function Movie ()
       <h3>Sinopse</h3>
       {movie.sinopse}
       <div className='button'>
-        <button className='b1' onClick={saveMovie}>{movies.find (m => m.id === movie.id) ? 'Save' : 'Remove'}</button>
+        <button className='b1' onClick={saveMovie}>{movies.find (m => m.id === movie.id) ? 'Remove' : 'Save'}</button>
         <button className='b2'>
           <a target='blank' href={`https://youtube.com/results?search_query=${movie.nome} trailer`}>Trailer</a>
         </button>
